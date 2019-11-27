@@ -2,35 +2,7 @@
 
 var div = document.getElementById("select")
 var list = document.querySelector(".list-group1")
-function choose1() {
-    
-    div.textContent = "you selected " + "Rome"
-}
-
-function choose2() {
-    
-    div.textContent = "you selected " + "Athens"
-}
-
-
-function choose3() {
-    
-    div.textContent = "you selected " + "Amsterdam"
-}
-
-
-function choose4() {
-  
-    div.textContent = "you selected " + "Bangkok"
-}
-
-
-
-function choose5() {
-    
-    div.textContent = "you selected " + "Cal gonone"
-}
-
+var lists = document.querySelectorAll(".list-group1 button")
 var qwe = document.getElementById("classtoggle")
 function toggleAlles(){
 if(qwe.textContent=="show distinations"
@@ -47,4 +19,11 @@ else{
 
 }
 
+for (i = 0; i < lists.length; i++) {
+    lists[i].addEventListener("mouseover", function (event) {
 
+        div.textContent = event.target.textContent
+
+
+    })
+}
